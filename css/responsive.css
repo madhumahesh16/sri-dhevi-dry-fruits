@@ -1,0 +1,804 @@
+/* ==========================================================
+   Sri Dhevi Dry Fruits – responsive overrides
+   Load AFTER styles.css:
+   <link rel="stylesheet" href="css/responsive.css">
+   ========================================================== */
+
+/* ---------- Global safety ---------- */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: clip;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+/* Touch devices: no hover "lift" (it sticks after tapping) */
+@media (hover: none) {
+
+    .p:hover,
+    .cat:hover,
+    .pm:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .p:hover .img img,
+    .cat:hover .c img,
+    .pm:hover .im,
+    .pimg:hover img {
+        transform: none;
+    }
+
+    .btn:hover,
+    .add:hover,
+    .buy:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ==========================================================
+   TABLET  (≤ 1000px)
+   ========================================================== */
+@media (max-width: 1000px) {
+    .w {
+        padding: 0 18px;
+    }
+
+    header .w {
+        height: 64px;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 48px;
+    }
+
+    /* mobile menu panel sits right under the sticky header */
+    nav {
+        top: 100%;
+        max-height: calc(100vh - 140px);
+        max-height: calc(100dvh - 140px);
+        overflow-y: auto;
+        padding: 8px 18px 16px;
+        gap: 0;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, .15);
+    }
+
+    nav>a,
+    .dd>a {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    nav>a.on {
+        border-bottom-color: var(--or);
+    }
+
+    /* dropdown sub-links become small pills under the parent link */
+    .dd {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .dd>a {
+        border-bottom: 0;
+    }
+
+    .dm {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 0 12px;
+        margin: 0;
+    }
+
+    .dm a {
+        padding: 6px 12px;
+        font-size: 12.5px;
+        color: var(--muted);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+    }
+
+    .burger {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+        line-height: 1;
+        border-radius: 8px;
+    }
+
+    .ic {
+        gap: 16px;
+    }
+
+    .ic img {
+        height: 22px;
+    }
+
+    .hero {
+        height: 380px;
+    }
+
+    .slide .w {
+        grid-template-columns: 1fr;
+    }
+
+    .slide::before {
+        background: linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .1) 85%);
+    }
+
+    .ph {
+        max-width: 80%;
+        opacity: .75;
+    }
+
+    .cats {
+        gap: 12px;
+    }
+
+    .cat .c,
+    .cat .c img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .grid,
+    .grid.g4 {
+        gap: 12px;
+    }
+
+    .promos {
+        gap: 12px;
+    }
+
+    .pm {
+        min-height: 118px;
+    }
+
+    .pd {
+        gap: 24px;
+    }
+
+    .pimg {
+        max-width: 520px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* ==========================================================
+   PHONE  (≤ 640px)
+   ========================================================== */
+@media (max-width: 640px) {
+    body {
+        font-size: 14px;
+    }
+
+    .w {
+        padding: 0 14px;
+    }
+
+    /* ----- announcement bar ----- */
+    .top {
+        font-size: 11px;
+    }
+
+    .top .w {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        gap: 10px;
+    }
+
+    .top span {
+        margin-right: 14px;
+    }
+
+    .top img {
+        height: 13px;
+    }
+
+    .top .w>div:last-child {
+        flex: none;
+    }
+
+    .wa {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    /* ----- header ----- */
+    header .w {
+        height: 58px;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .ic {
+        gap: 14px;
+    }
+
+    .ic img {
+        height: 21px;
+    }
+
+    .cart i {
+        top: -7px;
+        right: -9px;
+    }
+
+    nav {
+        max-height: calc(100vh - 110px);
+        max-height: calc(100dvh - 110px);
+        padding: 6px 14px 14px;
+    }
+
+    /* ----- hero ----- */
+    .hero {
+        height: 420px;
+    }
+
+    .slide .w {
+        align-content: center;
+        padding-bottom: 28px;
+    }
+
+    .slide::before {
+        background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .55));
+    }
+
+    .ph {
+        max-width: 100%;
+        width: 100%;
+        opacity: .55;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+    }
+
+    .slide h1 {
+        font-size: clamp(27px, 8.2vw, 36px);
+        line-height: 1.12;
+        margin-bottom: 10px;
+    }
+
+    .slide p {
+        font-size: 13.5px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .slide p br {
+        display: none;
+    }
+
+    .btn {
+        padding: 11px 18px;
+        font-size: 12.5px;
+    }
+
+    .b2 {
+        margin: 8px 0 0;
+    }
+
+    .arr {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .arr.l {
+        left: 6px;
+    }
+
+    .arr.r {
+        right: 6px;
+    }
+
+    .dots {
+        bottom: 10px;
+    }
+
+    /* ----- categories: swipeable row ----- */
+    .cats {
+        display: flex;
+        gap: 10px;
+        margin: 14px -14px;
+        padding: 2px 14px 8px;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .cats::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cat {
+        flex: 0 0 104px;
+        scroll-snap-align: start;
+        padding: 10px 4px;
+    }
+
+    .cat .c,
+    .cat .c img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .cat b {
+        font-size: 12.5px;
+    }
+
+    .cat small {
+        margin-top: 5px;
+        font-size: 10.5px;
+    }
+
+    /* ----- trust strip: tidy 2-col grid ----- */
+    .strip {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        padding: 4px 0;
+    }
+
+    .strip div {
+        padding: 10px 12px;
+        border-right: 0;
+        gap: 8px;
+        border-bottom: 1px solid #e3c590;
+    }
+
+    .strip div:nth-child(odd) {
+        border-right: 1px solid #e3c590;
+    }
+
+    .strip div:last-child {
+        grid-column: 1 / -1;
+        border-bottom: 0;
+        border-right: 0;
+    }
+
+    .strip .i,
+    .strip .i img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .strip b {
+        font-size: 11.5px;
+    }
+
+    .strip span {
+        font-size: 10px;
+    }
+
+    /* ----- section headings ----- */
+    .sh {
+        margin: 28px 0 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sh h2 {
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .sh:before,
+    .sh:after {
+        flex-basis: 18px;
+    }
+
+    .va {
+        display: block;
+        position: static;
+        order: 5;
+        flex: 0 0 100%;
+        text-align: center;
+        border: 0;
+        padding: 0;
+        font-size: 12.5px;
+        text-decoration: underline;
+    }
+
+    /* ----- product grid ----- */
+    .grid,
+    .grid.g4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .p {
+        padding: 8px;
+    }
+
+    .p .img {
+        height: 104px;
+    }
+
+    .p .img img {
+        height: 98px;
+    }
+
+    .p h3,
+    .p h3 a {
+        font-size: 13px;
+        margin-top: 8px;
+        line-height: 1.25;
+    }
+
+    .p .wt {
+        font-size: 11px;
+        margin: 2px 0 6px;
+    }
+
+    .pr s {
+        font-size: 10.5px;
+        margin-right: 4px;
+    }
+
+    .pr b {
+        font-size: 14.5px;
+    }
+
+    .p .add,
+    .add {
+        padding: 10px 6px;
+        font-size: 12px;
+        min-height: 38px;
+    }
+
+    .p .add {
+        margin-top: 10px;
+    }
+
+    .off {
+        width: 28px;
+        height: 28px;
+        font-size: 8.5px;
+        top: 6px;
+        right: 6px;
+    }
+
+    .heart {
+        width: 26px;
+        height: 26px;
+        top: 6px;
+        left: 6px;
+    }
+
+    /* ----- promo banners ----- */
+    .promos {
+        margin: 22px auto 30px;
+    }
+
+    .pm {
+        min-height: 112px;
+        padding: 16px 14px 16px 118px;
+    }
+
+    .pm .im {
+        width: 120px;
+    }
+
+    .pm h4 {
+        font-size: 18px;
+    }
+
+    .pm p {
+        font-size: 11.5px;
+        margin: 3px 0 8px;
+    }
+
+    /* ----- footer ----- */
+    footer {
+        padding-top: 30px;
+    }
+
+    .fg {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 16px;
+    }
+
+    .fg>div {
+        padding: 0;
+        border: 0;
+    }
+
+    .fg>div:first-child,
+    .fg>div.ct {
+        grid-column: 1 / -1;
+    }
+
+    .fg>div:first-child {
+        text-align: center;
+    }
+
+    .fg>div:first-child .logo {
+        justify-content: center;
+    }
+
+    .soc {
+        justify-content: center;
+    }
+
+    .nl {
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer h5 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    footer li {
+        font-size: 13px;
+        margin-bottom: 9px;
+    }
+
+    .ct li {
+        font-size: 13px;
+        align-items: flex-start;
+    }
+
+    .fb {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 16px;
+        padding: 16px 0 70px;
+    }
+
+    img.pay {
+        max-width: 100%;
+        height: 26px;
+    }
+
+    /* ----- floating WhatsApp ----- */
+    .fab {
+        right: 10px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        width: 86px;
+        height: 42px;
+    }
+
+    /* ----- weight modal ----- */
+    .modal {
+        width: calc(100vw - 24px);
+        padding: 16px;
+    }
+
+    .mh img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .mh h3 {
+        font-size: 16px;
+    }
+
+    .chips {
+        gap: 6px;
+    }
+
+    /* ----- cart drawer ----- */
+    .drawer {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .dh {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .db {
+        padding: 4px 14px;
+    }
+
+    .it {
+        grid-template-columns: 54px 1fr auto;
+        gap: 10px;
+    }
+
+    .it img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .df {
+        padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* 16px inputs stop iOS Safari zooming in on focus */
+    input,
+    textarea,
+    select,
+    .df input,
+    .df textarea,
+    .nl input {
+        font-size: 16px;
+    }
+
+    /* ----- shop page ----- */
+    .pg {
+        padding-top: 12px;
+        padding-bottom: 36px;
+    }
+
+    .crumb {
+        font-size: 11.5px;
+        margin: 4px 0 12px;
+    }
+
+    .sh2 {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sh2 h1 {
+        font-size: 26px;
+    }
+
+    .sh2 label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+
+    .sh2 select {
+        flex: 1;
+        margin-left: 10px;
+    }
+
+    .chipbar {
+        margin: 0 -14px 16px;
+        padding: 0 14px 8px;
+        scrollbar-width: none;
+    }
+
+    .chipbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fc {
+        padding: 8px 14px;
+        font-size: 12.5px;
+    }
+
+    /* ----- product detail ----- */
+    .pd {
+        gap: 18px;
+        margin-bottom: 32px;
+    }
+
+    .pimg {
+        border-radius: 12px;
+    }
+
+    .pinfo h1 {
+        font-size: 26px;
+    }
+
+    .pp b {
+        font-size: 26px;
+    }
+
+    .pinfo .chips {
+        max-width: none;
+    }
+
+    .pbtn {
+        gap: 10px;
+    }
+
+    .pbtn .qty {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .pbtn .qty button {
+        flex: 0 0 52px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .pbtn .add,
+    .pbtn .buy {
+        flex: 1 1 0;
+        width: auto;
+        padding: 13px 10px;
+        font-size: 13.5px;
+        text-align: center;
+    }
+
+    .rh {
+        font-size: 22px;
+        margin: 4px 0 14px;
+    }
+}
+
+/* ==========================================================
+   SMALL PHONES  (≤ 380px)
+   ========================================================== */
+@media (max-width: 380px) {
+    .w {
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .ic {
+        gap: 11px;
+    }
+
+    .hero {
+        height: 440px;
+    }
+
+    .grid,
+    .grid.g4 {
+        gap: 8px;
+    }
+
+    .p .img {
+        height: 92px;
+    }
+
+    .p .img img {
+        height: 86px;
+    }
+
+    .pr b {
+        font-size: 13.5px;
+    }
+
+    .pm {
+        padding-left: 100px;
+    }
+
+    .pm .im {
+        width: 100px;
+    }
+
+    .top .w>div:first-child span:nth-child(n+2) {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   LANDSCAPE PHONES – keep hero from eating the screen
+   ========================================================== */
+@media (max-height: 480px) and (orientation: landscape) {
+    .hero {
+        height: 320px;
+    }
+
+    nav {
+        max-height: calc(100vh - 90px);
+    }
+}
